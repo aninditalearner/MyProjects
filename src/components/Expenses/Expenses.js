@@ -2,9 +2,16 @@ import React from 'react';
 import ExpenseItem from "./ExpenseItem";
 import Card from "../UI/Card";
 import "./Expenses.css";
+import ExpensesFilter from './ExpensesFilter';
 function Expenses(props) {
+    const expenseFilterHandler = (selectedYear) => {
+        const year = {
+            ...selectedYear
+        };
+    }
     return(
         <Card className="expenses">
+            <ExpensesFilter onSelect={expenseFilterHandler}/>
             <ExpenseItem
             title={props.item[0].title}
             date={props.item[0].date}
