@@ -1,0 +1,28 @@
+.search-header{
+    background-color: #777c81c2;
+    display: flex;
+    padding: 10px;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center
+}
+
+.search-header input{
+    height: 15px;
+    padding: 10px;
+    font-size: 16px; 
+    border: 1px solid #ccc;
+    width: 40%;
+}
+
+.search-header p{
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.account-icon, .cart-icon, .nav-icon{
+    height: 30px;
+    width: 30px;
+    padding-left: 5px;
+    padding-right: 5px;
+}

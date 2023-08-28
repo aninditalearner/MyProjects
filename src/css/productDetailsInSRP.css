@@ -1,0 +1,33 @@
+/* ProductItem.css */
+.product-item {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin: 10px;
+    background-color: #f9f9f9;
+
+  }
+  
+  .product-item h3 {
+    margin: 0;
+  }
+  
+  .product-item p {
+    margin: 5px 0;
+  }
+  
+  .product-item a {
+    text-decoration: none;
+    color: #333;
+  }
+.flex-container{
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+}
+  .image{
+    width: 10%;
+  }
+  .image img{
+    width: 90%;
+  }
+
