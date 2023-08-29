@@ -2,3 +2,10 @@ ul.list {
     list-style-type: none;
     padding: 0;
 }
+
+.flex-content{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}

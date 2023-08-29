@@ -11,7 +11,7 @@ function PageHeader() {
     const [searchTerm, setSearchTerm] = useState('');
     const handleSearch = (e) => {
         if( e.key === 'Enter' ){
-        navigate(`/search?query=${encodeURIComponent(searchTerm)}`);
+        navigate(`/search?query=${encodeURIComponent(searchTerm)}&sort=rel&page=1&size=2`);
         }
         }
     

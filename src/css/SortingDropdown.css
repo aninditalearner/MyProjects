@@ -1,0 +1,20 @@
+.sort-dropdown{
+    display: flex;
+    flex-direction: row;
+    margin: 10px;
+}
+
+label {
+    padding-top: 5px;
+    font-size: 14px;
+    line-height: 20px;
+    vertical-align: middle;
+}
+
+select{
+    width: 250px;
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 10px;
+    height: 30px;
+}
