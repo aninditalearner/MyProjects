@@ -39,3 +39,18 @@
     font-size: 16px;
     border: 1px solid black;
   }
+
+  .itemsDropdown {
+    margin-left: 20px;
+    padding-top: 5px;
+    letter-spacing: 0.24px;
+    font-size: 14px;
+  }
+
+  #itemsPerPage{
+    margin: 0 5px;
+    color: black;
+    width: 45px;
+    padding: 1px;
+    border: 1px solid black;
+  }

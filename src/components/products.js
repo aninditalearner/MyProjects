@@ -29,7 +29,24 @@ const products = [
       name: 'Job Ready Java', 
       author: 'Haythem Balti, Alan Galloway', 
       publicationDate: '2018-08-10', 
-      price: 40.00},
+      price: 40.00
+    },
+    { 
+      id: 5, 
+      image: require('../images/5.jpg'),
+      name: 'Java Programming 24-Hour Trainer', 
+      author: 'Yakov Fain, Alan Galloway', 
+      publicationDate: '2019-08-10', 
+      price: 45.00
+    },
+    { 
+        id: 6, 
+        image: require('../images/6.jpg'),
+        name: 'Financial Accounting Theory and Analysis: Text and Cases, 14th Edition', 
+        author: 'Donald E. Kieso, Alan Galloway, Barry Burd', 
+        publicationDate: '2020-02-10', 
+        price: 47.00
+    },
   ];
   
 export default products;

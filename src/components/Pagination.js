@@ -8,7 +8,15 @@ function Pagination(props) {
     let updatedSearchParams = new URLSearchParams(searchParams.toString());
     const [currentPage, setCurrentPage] = useState(1); // Default current page
     const [pageInput, setPageInput] = useState(1);
-    const itemsPerPage = 2; // Number of items per page
+    const [itemsPerPage, setItemsPerPage] = useState(2); // Number of items per page
+    const itemsPerPageOptions = [1,2,5,10];
+
+    //to handle the items per page dropdown
+    const handleItems = (e) => {
+        setItemsPerPage(e.target.value);
+        updatedSearchParams.set('size', e.target.value);
+        setSearchParams(updatedSearchParams.toString());
+    }
 
     const handlePreviousButtonClick = () => {
         setPageInput(currentPage - 1);
@@ -27,13 +35,22 @@ function Pagination(props) {
     // Update the page based on URL parameter change
     useEffect(() => {
         const urlPage = parseInt(new URLSearchParams(location.search).get('page'));
-        if (urlPage!=currentPage) {
+        if (urlPage!==currentPage) {
             setPageInput(urlPage);
             setCurrentPage(urlPage);
-            updatedSearchParams.set('page', urlPage);
+        }
+    }, [location.search]);
+
+    // Update the items per page based on URL parameter change
+    useEffect(() => {
+        const urlSize = parseInt(new URLSearchParams(location.search).get('size'));
+        if (urlSize!==itemsPerPage) {
+            setItemsPerPage(urlSize);
+            updatedSearchParams.set('page', 1);
             setSearchParams(updatedSearchParams.toString());
         }
     }, [location.search]);
+
 
     // Calculate pagination
     const startIndex = 1;
@@ -70,6 +87,8 @@ function Pagination(props) {
         const page = e.target.value;
         setPageInput(page);
     }
+
+    
     return (
             
         <div className="pagination">
@@ -94,6 +113,20 @@ function Pagination(props) {
             <span class="right-arrow">&gt;</span>
             </button>
             <span>of {endIndex} pages</span>
+            <span className='itemsDropdown'>
+            <label>Items per page:</label>
+            <select
+                id="itemsPerPage"
+                value={itemsPerPage}
+                onChange={handleItems}
+            >
+            {itemsPerPageOptions.map((option) => (
+            <option key={option} value={option}>
+              {option}
+            </option>
+            ))}
+            </select>
+            </span>
         </div>
     );
 }

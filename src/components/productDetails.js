@@ -1,10 +1,9 @@
 import React from 'react';
-import { useParams } from 'react-router-dom'; // You need to install 'react-router-dom' package
 
 import products from './products';
 
-function ProductDetails() {
-  const { productId } = useParams();
+function ProductDetails(props) {
+  const productId = props.match.params.productId;
   const product = products.find((product) => product.id === parseInt(productId));
 
   if (!product) {

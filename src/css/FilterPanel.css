@@ -1,0 +1,25 @@
+.facets-panel-item{
+    margin: 0 10px 15px;
+    font-size: 14px;
+    line-height: 22px;
+    font-weight: normal;
+    color: #000;
+}
+
+.applied-facets{
+    display: flex;
+    flex-direction: column;
+    margin: 0 -10px;
+    font-size: 0;
+}
+.facets-panel-item span{
+    background-color: #D8D8D8;
+    position: relative;
+    display: inline-block;
+    padding: 5px 38px 5px 12px;
+}
+
+.facets-panel-list{
+    display: flex;
+    flex-direction: column;
+}
