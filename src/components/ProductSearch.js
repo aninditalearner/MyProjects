@@ -14,14 +14,38 @@ function ProductSearch() {
   const sortOption = new URLSearchParams(location.search).get('sort');  //To get the sorting option query
   const [startIndex,setStartIndex] = useState(0);
   const [endIndex,setEndIndex] = useState(1);
+  const [selectedAuthors, setSelectedAuthors] = useState([]);
+  
+  // Update the items per page based on URL parameter change
+  useEffect(() => {
+    const urlSize = parseInt(new URLSearchParams(location.search).get('size'));
+    const pageNo = new URLSearchParams(location.search).get('page'); 
+    setStartIndex((pageNo - 1) * urlSize);
+    setEndIndex((pageNo - 1) * urlSize + urlSize);
+    const authors = new URLSearchParams(window.location.search).getAll('author');
+    setSelectedAuthors(authors);
+    }, [location.search]);
 
   //To get the products' list for which the names contain the searched term
   const filteredProducts = products.filter((product) =>
     product.name.toLowerCase().includes(query.toLowerCase())
   );
+  
 
+  let filteredProductsWithFacets;
+  if (selectedAuthors.length === 0) {
+    // No author filter applied, show all products
+    filteredProductsWithFacets = [...filteredProducts];
+  } else {
+    filteredProductsWithFacets = filteredProducts.filter((product) => {
+      const productAuthors = product.author.split(',').map((author) => author.trim());
+      return productAuthors.some((author) => selectedAuthors.includes(author));
+    
+  });
+  }
+  
   //Evaluating the sorted list of products from filteredProducts using the sort option
-  const sortedProducts = [...filteredProducts].sort((a, b) => {
+  const sortedProducts = [...filteredProductsWithFacets].sort((a, b) => {
     if (sortOption === 'name') {
       return a.name.localeCompare(b.name);
     } else if (sortOption === 'price') {
@@ -32,18 +56,12 @@ function ProductSearch() {
     return 0;
   });
 
-  // Update the items per page based on URL parameter change
-  useEffect(() => {
-    const urlSize = parseInt(new URLSearchParams(location.search).get('size'));
-    const pageNo = new URLSearchParams(location.search).get('page'); 
-    setStartIndex((pageNo - 1) * urlSize);
-    setEndIndex((pageNo - 1) * urlSize + urlSize)
-    }, [location.search]);
+  
 
   const currentProducts = sortedProducts.slice(startIndex, endIndex);
 
   //Filter section
-  const authors = [...new Set(sortedProducts.map((product) => product.author))];
+  const authors = [...new Set(filteredProducts.map((product) => product.author))];
   
   // Initialize an array to store individual author names
   const individualAuthors = [];
@@ -65,13 +83,14 @@ const uniqueAuthors = [...new Set(individualAuthors)].sort((a, b) => a.localeCom
 
 //Handling the author filter changes
 const handleAuthorFilterChange = (authorName) => {
-  alert("Author selected");
+  setSelectedAuthors(authorName);
 }
 
   return (
     <div>
       <PageHedaer/>
-      <AuthorFilter authors={uniqueAuthors} onAuthorFilterChange={handleAuthorFilterChange}/> 
+      <AuthorFilter authors={uniqueAuthors} selectedAuthors={selectedAuthors} onAuthorFilterChange={handleAuthorFilterChange}/>
+      <div className='right-panel'>
       <div className='flex-content'>
       <SortingDropdown/>
       <Pagination total= {sortedProducts.length} />
@@ -83,6 +102,7 @@ const handleAuthorFilterChange = (authorName) => {
           </li>
         ))}
       </ul>
+      </div> 
     </div>
   );
 }

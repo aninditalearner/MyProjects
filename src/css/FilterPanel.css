@@ -1,25 +1,67 @@
-.facets-panel-item{
-    margin: 0 10px 15px;
+/* Filter panel container */
+.filter-panel {
+    background-color: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 5px;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+    padding: 16px;
+    margin: 16px 0;
+    width: 25%;
+    float: left;
+  }
+  
+  /* Applied facets (selected filters) */
+  .applied-facets {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 16px;
+    width: fit-content;
+  }
+  
+  .facets-panel-item {
+    background-color: #ddd;
+    color: #333;
+    padding: 4px 8px;
+    margin-right: 8px;
+    margin-bottom: 8px;
     font-size: 14px;
-    line-height: 22px;
-    font-weight: normal;
-    color: #000;
-}
+    width: fit-content;
+  }
+  
+  /* Filter section title */
+  .filter-section-title {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 8px;
+    font-family: Open Sans Semibold;
+  }
+  
+  /* Filter list */
+  .facets-panel-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  /* Filter list item (checkbox label) */
+  .facets-panel-list label {
+    display: block;
+    margin-bottom: 8px;
+    cursor: pointer;
+    font-size: 14px;
+    
+  }
+  
+  /* Filter checkbox */
+  .facets-panel-list input[type="checkbox"] {
+    margin-right: 8px;
+    vertical-align: middle;
+  }
 
-.applied-facets{
-    display: flex;
-    flex-direction: column;
-    margin: 0 -10px;
-    font-size: 0;
-}
-.facets-panel-item span{
-    background-color: #D8D8D8;
-    position: relative;
-    display: inline-block;
-    padding: 5px 38px 5px 12px;
-}
-
-.facets-panel-list{
-    display: flex;
-    flex-direction: column;
-}
+  .facet-categories{
+    border-style: solid;
+    border-width: thin;
+    border-color: rgb(189 172 172); 
+    padding: 5px;
+    padding-top: 0px;
+  }

@@ -5,7 +5,11 @@ import '../css/Pagination.css';
 function Pagination(props) {
     const location = useLocation();
     const [searchParams, setSearchParams] = useSearchParams();
-    let updatedSearchParams = new URLSearchParams(searchParams.toString());
+    const queryParams = new URLSearchParams(window.location.search);
+    let updatedSearchParams = new URLSearchParams(queryParams.toString()); 
+    //Using queryParam instead of searchParams solved the authro query issue
+
+    //let updatedSearchParams = new URLSearchParams(searchParams.toString());
     const [currentPage, setCurrentPage] = useState(1); // Default current page
     const [pageInput, setPageInput] = useState(1);
     const [itemsPerPage, setItemsPerPage] = useState(2); // Number of items per page
