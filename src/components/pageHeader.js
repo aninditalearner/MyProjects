@@ -20,8 +20,9 @@ function PageHeader() {
         setSearchTerm(searchTerm);
     }
     return (
-        <div>
-            <div className='search-header'>
+        <div>           
+            <header className="search-header">
+                <nav className="navbar">
                 <Link to={`/`}><img className='brand-logo' src={logo} alt="logo"/></Link>
                 <input
                 type="text"
@@ -30,12 +31,19 @@ function PageHeader() {
                 onChange={handleInputBoxValue}
                 onKeyDown={handleSearch}
                 />
+                <ul className="nav-menu">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/search?query=&sort=rel&page=1&size=5">Products</a></li>
+                    <li><a href="/about">About Us</a></li>
+                    <li><a href="/contact">Contact</a></li>
+                </ul>
                 <div>
-                    <img className='account-icon' src={account} alt="account"/>
-                    <img className='cart-icon' src={cartIcon} alt="cart icon"/>
-                    <img className='nav-icon' src={navIcon} alt="nav icon"/>
+                    <a href="/my-account"><img className='account-icon' src={account} alt="account"/></a>
+                    <a href="/cart"><img className='cart-icon' src={cartIcon} alt="cart icon"/></a>
+                    <a href="/menu"><img className='nav-icon' src={navIcon} alt="nav icon"/></a>
                 </div>
-            </div>
+                </nav>
+            </header>
         </div>
     );
 }

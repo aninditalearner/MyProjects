@@ -24,12 +24,33 @@ function ProductDetails() {
         <p className="product-author">Author: {product.author}</p>
         <p className="product-publication">Publication Date: {product.publicationDate}</p>
         <p className="product-price">Price: ${product.price.toFixed(2)}</p>
-        <button className="add-to-cart-button">Add to Cart</button>
+        <div className="product-description">
+          <h3>Description</h3>
+          <p>{product.description}</p>
+        </div>
+       
       </div>
-      <div className="product-description">
-        <h3>Description</h3>
-        <p>{product.description}</p>
-      </div>
+      <section className="product-details-sidebar">
+        <div className='product-add-to-cart'>
+          <div className='type-of-book'>
+            <span className='hidden-xs'>Selected type:&nbsp;</span>
+            <b>Hardcover</b>
+          </div>
+          <div className='product-qty'>
+            <span className='form-label'>Quantity:</span>
+            <span className='product-quantity'>1</span>
+            
+          </div>
+          <div class="product-price-wr">
+            <p class="pr-price">${product.price.toFixed(2)}</p>
+          </div>
+          <div class="add-to-cart">
+            <div class="addtocart-component">
+	              <button class="small-button add-to-cart-button js-add-to-cart">Add to cart</button>
+	          </div>
+          </div>
+        </div>
+      </section>
     </div>
     </div>
   );

@@ -30,15 +30,24 @@
   }
   
   .add-to-cart-button {
-    padding: 10px 20px;
-    background-color: #0073e6;
-    color: #fff;
-    border: none;
-    cursor: pointer;
-  }
+    width: 100%;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin-right: 30px;
+    color: #FFFFFF;
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: 0.27px;
+    line-height: 19px;
+    text-align: center;
+    text-transform: uppercase;
+    background-color: #009ca9;
+}
+
+  
   
   .product-description {
-    margin-top: 20px;
+    margin-top: 50px;
   }
   
   .product-not-found {
@@ -46,3 +55,51 @@
     color: #ff0000;
     margin: 20px;
   }
+
+  .product-details-sidebar{
+    padding: 10px;
+    border: 1px solid black;
+    float: right;
+    width: 20%;
+    height: 220px;
+    padding-left: 52px;
+    padding-right: 40px;
+    padding-bottom: 20px;
+    background: white;
+    
+  }
+ .type-of-book{
+  margin-bottom: 10px;
+  text-align: left;
+    color: #414245;
+    font-size: 17px;
+    line-height: 22px;
+ }
+
+ .type-of-book span{
+  margin-right: 10px;
+ }
+  
+ .form-label{
+  font-size: 16px;
+    font-weight: 400;
+ }
+
+ .product-quantity{
+  margin-left: 30px;
+ }
+
+ .product-add-to-cart{
+  padding-top: 30px;
+ }
+
+ .product-price-wr{
+  color: #292A42;
+    font-size: 24px;
+    font-weight: 600;
+    letter-spacing: 0.41px;
+    line-height: 33px;
+    margin: 0 0 20px 0;
+    text-align: right;
+ }
+
