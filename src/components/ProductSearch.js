@@ -62,24 +62,26 @@ function ProductSearch() {
 
   //Filter section
   const authors = [...new Set(filteredProducts.map((product) => product.author))];
-  
-  // Initialize an array to store individual author names
   const individualAuthors = [];
 
   // Iterate through the author names
   for (const authorName of authors) {
-    // Use regular expressions to split author names by comma
     const authors = authorName.split(/[,]/);
-
-    // Trim and remove empty strings
     const cleanedAuthors = authors.map((author) => author.trim()).filter(Boolean);
-
-    // Add cleaned author names to the individualAuthors array
     individualAuthors.push(...cleanedAuthors);
 }
 
 // Use a Set to get unique author names
 const uniqueAuthors = [...new Set(individualAuthors)].sort((a, b) => a.localeCompare(b));
+
+// Count the number of products for each author
+const counts = {};
+uniqueAuthors.forEach((author) => {
+  const count = products.filter((product) =>
+    product.author.includes(author)
+  ).length;
+  counts[author] = count;
+});
 
 //Handling the author filter changes
 const handleAuthorFilterChange = (authorName) => {
@@ -89,7 +91,7 @@ const handleAuthorFilterChange = (authorName) => {
   return (
     <div>
       <PageHedaer/>
-      <AuthorFilter authors={uniqueAuthors} selectedAuthors={selectedAuthors} onAuthorFilterChange={handleAuthorFilterChange}/>
+      <AuthorFilter authors={uniqueAuthors} authorsWithCount={counts} selectedAuthors={selectedAuthors} onAuthorFilterChange={handleAuthorFilterChange}/>
       <div className='right-panel'>
       <div className='flex-content'>
       <SortingDropdown/>

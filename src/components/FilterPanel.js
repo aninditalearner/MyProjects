@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useLocation, useNavigate  } from 'react-router-dom';
 import '../css/FilterPanel.css';
 
-function AuthorFilter({ authors, onAuthorFilterChange }) {
+function AuthorFilter({ authors, authorsWithCount, onAuthorFilterChange }) {
     const location = useLocation();
     const [selectedAuthors, setSelectedAuthors] = useState([]);
     const handleAuthorChange = (authorName) => {
@@ -34,14 +34,29 @@ function AuthorFilter({ authors, onAuthorFilterChange }) {
       });
       window.history.pushState({}, '', currentURL);
     }
+
+    function handleRemoveFilter(authorName){
+        const updatedAuthors = selectedAuthors.filter((author) => author !== authorName);
+          onAuthorFilterChange(updatedAuthors);
+          updateURL(updatedAuthors);
+          setSelectedAuthors(updatedAuthors);
+          
+    }
   
     return (
       <div className="filter-panel">
+        <h2 className='filterHeading'>filters</h2>
         <div className='applied-facets'>
             {selectedAuthors.map((appliedAuthor) => (
-               <div className='facets-panel-item' key={appliedAuthor}>
-                 <span>{appliedAuthor}</span>
-               </div> 
+               <div className="facets-panel-item" key={appliedAuthor}>
+            {appliedAuthor}&nbsp;
+            <button
+              className="remove-filter-button"
+              onClick={() => handleRemoveFilter(appliedAuthor)}
+            >
+              &#x2716; {/* Close (cross) icon */}
+            </button>
+          </div> 
             ))}
         </div>
         <div className='facet-categories'>
@@ -55,7 +70,7 @@ function AuthorFilter({ authors, onAuthorFilterChange }) {
               checked={selectedAuthors.includes(author)}
               onChange={() => handleAuthorChange(author)}
             />
-            {author}
+            {author}<span className='filterCount'>{authorsWithCount[author]}</span>
           </label>
         ))}
         </ul>

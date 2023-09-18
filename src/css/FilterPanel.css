@@ -65,3 +65,27 @@
     padding: 5px;
     padding-top: 0px;
   }
+
+  .filterCount{
+    opacity: 0.5;
+    margin-left: 10px;
+  }
+
+  .remove-filter-button{
+    border: none;
+    background-color: transparent; 
+    color: inherit; 
+    padding: 0; 
+    cursor: pointer;
+  }
+
+  .filterHeading{
+    display: inline-block;
+    margin-bottom: 0;
+    text-transform: uppercase;
+    color: #414245;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 22px;
+}
+  
