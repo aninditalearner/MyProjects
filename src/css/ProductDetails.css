@@ -1,7 +1,10 @@
 /* ProductDetails.css */
 .product-details-container {
-    display: flex;
     padding: 20px;
+    padding-top: 180px;
+    position: relative;
+    z-index: 1; /* Ensure it's behind the header */
+    display: flex;
     border: 1px solid #ccc;
     background-color: #fff;
   }

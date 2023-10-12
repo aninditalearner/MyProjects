@@ -1,0 +1,79 @@
+
+.footer{
+    background-color: #000;
+}
+
+.footer a{
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.footer strong a{
+    
+    position: relative;
+    color: #fff;
+    display: block;
+    font-size: 14px;
+    line-height: 30px;
+    text-transform: uppercase;
+}
+
+
+
+ul{
+    list-style-type: none;
+    padding-left: 0px;
+}
+
+ .about-section, .main-links{
+    text-align: left;
+}
+
+.main-link-up{
+    margin-bottom: 40px;
+}
+
+.footer-menu{
+    font-size: 15px;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.account-section{
+    text-align: right;
+    padding-right: 40px;
+}
+
+.account-section ul{
+    text-align: right;
+}
+
+.upper-row{
+    padding-left: 105px;
+    padding-right: 105px;
+    margin-bottom: 30px;
+    margin-top: 30px; 
+}
+
+.copyright{
+    border-top: 1px solid rgba(255, 255, 255, 0.4);
+    padding-top: 30px;
+    margin-left: 105px;
+    margin-right: 105px;
+    margin-bottom: 30px;
+    font-size: 13px;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.copyright ul{
+    font-size: 13px;
+    text-align: right;
+     padding-left: 20px;
+}
+
+.copyright ul li{
+    display: inline;
+}
+
+.copyright ul li::after {
+  content: " | ";
+  word-spacing: 1em;
+}

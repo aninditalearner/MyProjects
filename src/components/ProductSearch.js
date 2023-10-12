@@ -7,6 +7,7 @@ import SortingDropdown from './SortingDropdown';
 import Pagination from './Pagination';
 import '../css/ProductSearch.css';
 import AuthorFilter from './FilterPanel';
+import Footer from './Footer';
 
 function ProductSearch() {
   const location = useLocation(); // Get the location object from react-router-dom
@@ -91,7 +92,9 @@ const handleAuthorFilterChange = (authorName) => {
   return (
     <div>
       <PageHedaer/>
-      <AuthorFilter authors={uniqueAuthors} authorsWithCount={counts} selectedAuthors={selectedAuthors} onAuthorFilterChange={handleAuthorFilterChange}/>
+      <div class="container body-content">
+      <div class="author-filter"><AuthorFilter authors={uniqueAuthors} authorsWithCount={counts} selectedAuthors={selectedAuthors} onAuthorFilterChange={handleAuthorFilterChange}/></div>
+      <div class="product-cards">
       <div className='right-panel'>
       <div className='flex-content'>
       <SortingDropdown/>
@@ -105,6 +108,9 @@ const handleAuthorFilterChange = (authorName) => {
         ))}
       </ul>
       </div> 
+      </div> 
+      </div>
+      <Footer/>
     </div>
   );
 }

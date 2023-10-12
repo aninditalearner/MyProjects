@@ -1,91 +1,106 @@
-/* Filter panel container */
+/* Styling for the filter panel container */
 .filter-panel {
-    background-color: #fff;
-    border: 1px solid #e0e0e0;
-    border-radius: 5px;
-    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
-    padding: 16px;
-    margin: 16px 0;
-    width: 25%;
-    float: left;
-  }
-  
-  /* Applied facets (selected filters) */
-  .applied-facets {
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 16px;
-    width: fit-content;
-  }
-  
-  .facets-panel-item {
-    background-color: #ddd;
-    color: #333;
-    padding: 4px 8px;
-    margin-right: 8px;
-    margin-bottom: 8px;
-    font-size: 14px;
-    width: fit-content;
-  }
-  
-  /* Filter section title */
-  .filter-section-title {
-    font-size: 16px;
-    font-weight: bold;
-    margin-bottom: 8px;
-    font-family: Open Sans Semibold;
-  }
-  
-  /* Filter list */
-  .facets-panel-list {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
-  
-  /* Filter list item (checkbox label) */
-  .facets-panel-list label {
-    display: block;
-    margin-bottom: 8px;
-    cursor: pointer;
-    font-size: 14px;
-    
-  }
-  
-  /* Filter checkbox */
-  .facets-panel-list input[type="checkbox"] {
-    margin-right: 8px;
-    vertical-align: middle;
-  }
-
-  .facet-categories{
-    border-style: solid;
-    border-width: thin;
-    border-color: rgb(189 172 172); 
-    padding: 5px;
-    padding-top: 0px;
-  }
-
-  .filterCount{
-    opacity: 0.5;
-    margin-left: 10px;
-  }
-
-  .remove-filter-button{
-    border: none;
-    background-color: transparent; 
-    color: inherit; 
-    padding: 0; 
-    cursor: pointer;
-  }
-
-  .filterHeading{
-    display: inline-block;
-    margin-bottom: 0;
-    text-transform: uppercase;
-    color: #414245;
-    font-size: 16px;
-    font-weight: 600;
-    line-height: 22px;
+  background-color: #fff;
+  border: 1px solid #eaeaea;
+  border-radius: 4px;
+  padding: 16px;
+  margin: 16px 0;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  max-height: 100px; /* Adjust the max height as needed */
+  overflow: hidden;
+  transition: max-height 0.3s ease-in-out;
 }
-  
+
+/* Styling for the "filters" heading */
+.filter-heading {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 16px;
+}
+
+/* Styling for applied facets container */
+.applied-facets {
+  margin-bottom: 16px;
+}
+
+/* Styling for individual applied facet items */
+.facets-panel-item {
+  display: inline-block;
+  margin-right: 8px;
+  background-color: #f5f5f5;
+  border: 1px solid #e0e0e0;
+  border-radius: 4px;
+  padding: 4px 8px;
+  font-size: 14px;
+  color: #333;
+}
+
+/* Styling for the remove filter button */
+.remove-filter-button {
+  background: none;
+  border: none;
+  font-size: 14px;
+  color: #e53935; /* Red color for the button */
+  cursor: pointer;
+  margin-left: 4px;
+}
+
+/* Styling for the facet categories container */
+.facet-categories {
+  font-size: 14px;
+}
+
+/* Styling for the filter section title */
+.filter-section-title {
+  font-weight: bold;
+  margin-bottom: 8px;
+  color: #333;
+}
+
+/* Styling for the facets panel list */
+.facets-panel-list {
+  list-style: none;
+  padding: 0;
+  max-height: 100px; /* Adjust the max height as needed */
+  overflow: hidden;
+  transition: max-height 0.3s ease-in-out;
+}
+
+/* Styling for individual facet labels */
+.label {
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
+  padding: 5px 0;
+  margin: 0;
+}
+
+/* Styling for the facet checkbox input */
+input[type="checkbox"] {
+  margin-right: 8px;
+}
+
+/* Styling for the facet count */
+.filterCount {
+  margin-left: 8px;
+  color: #777;
+}
+
+/* Add styles for the expanded state */
+.filter-panel.expanded {
+  max-height: none;
+}
+
+/* Styles for the arrow button */
+.expand-button {
+  float: right;
+  font-size: 18px;
+  line-height: 1;
+  padding: 0 10px;
+  cursor: pointer;
+}
+
+/* Add styles for the expanded state of the author list */
+.facets-panel-list.expanded {
+  max-height: none;
+}

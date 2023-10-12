@@ -5,6 +5,7 @@ import '../css/FilterPanel.css';
 function AuthorFilter({ authors, authorsWithCount, onAuthorFilterChange }) {
     const location = useLocation();
     const [selectedAuthors, setSelectedAuthors] = useState([]);
+    const [isExpanded, setIsExpanded] = useState(false);
     const handleAuthorChange = (authorName) => {
       const updatedAuthors = selectedAuthors.includes(authorName)
         ? selectedAuthors.filter((author) => author !== authorName)
@@ -14,6 +15,11 @@ function AuthorFilter({ authors, authorsWithCount, onAuthorFilterChange }) {
       onAuthorFilterChange(updatedAuthors);
       updateURL(updatedAuthors);
     };
+
+    //To toggle the expand button in filter section
+    const toggleExpand = () => {
+      setIsExpanded(!isExpanded);
+    }
 
     // Update the author based on URL parameter change
     useEffect(() => {
@@ -44,8 +50,11 @@ function AuthorFilter({ authors, authorsWithCount, onAuthorFilterChange }) {
     }
   
     return (
-      <div className="filter-panel">
-        <h2 className='filterHeading'>filters</h2>
+      <div className={`filter-panel ${isExpanded ? 'expanded' : ''}`}>
+         <h2 className='filterHeading'>
+            filters
+           
+          </h2>
         <div className='applied-facets'>
             {selectedAuthors.map((appliedAuthor) => (
                <div className="facets-panel-item" key={appliedAuthor}>
@@ -60,7 +69,11 @@ function AuthorFilter({ authors, authorsWithCount, onAuthorFilterChange }) {
             ))}
         </div>
         <div className='facet-categories'>
-        <h3 className="filter-section-title">AUTHOR</h3>
+        <h3 className="filter-section-title">AUTHOR
+        <button className='expand-button' onClick={toggleExpand}>
+          {isExpanded ? '▼' : '▶'}
+        </button>
+        </h3>
         <ul className='facets-panel-list'>
         {authors.map((author) => (
           <label key={author}>

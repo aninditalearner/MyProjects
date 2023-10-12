@@ -1,16 +1,230 @@
-ul.list {
-    list-style-type: none;
+/* Styling for the product details card */
+.product-item {
+    border: 1px solid #eaeaea;
+    border-radius: 4px;
+    padding: 16px;
+    margin: 16px 0;
+    background-color: #fff;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  }
+  
+  .product-item a {
+    text-decoration: none;
+    color: #333;
+  }
+  
+  .product-item:hover {
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  }
+  
+  /* Styling for the product image */
+  .product-item .image img {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  /* Styling for product details */
+  .product-item .product-details {
+    margin-left: 16px;
+  }
+  
+  .product-item h2 {
+    font-size: 18px;
+    font-weight: bold;
+    margin: 0;
+  }
+  
+  .product-item p {
+    margin: 8px 0;
+    font-size: 14px;
+  }
+  
+  .product-item .author-label {
+    font-weight: bold;
+  }
+  
+  .product-item .price-label {
+    font-weight: bold;
+    color: #e53935; /* Red color for price */
+  }
+  
+  /* Styling for the publication date */
+  .product-item .publication-date-label {
+    font-style: italic;
+  }
+  
+  /* Styling for the product list container */
+  .list {
+    list-style: none;
     padding: 0;
-}
-
-.flex-content{
+  }
+  
+  /* Styling for the flex container */
+  .flex-container {
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
     align-items: center;
+  }
+  
+  /* Styling for the right arrow icon */
+  .right-arrow {
+    margin-left: auto;
+    font-size: 24px;
+    color: #2196F3; /* Blue color for the arrow */
+  }
+  
+  /* Styling for the right panel */
+  .right-panel {
+    margin-left: 24px; /* Adjust margin as needed */
+  }
+  
+  /* Styling for pagination */
+  .pagination {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 16px;
+  }
+  
+  .pagination button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 20px;
+    padding: 0 8px;
+    color: #2196F3; /* Blue color for buttons */
+  }
+  
+  .pagination input {
+    text-align: center;
+    font-size: 16px;
+    width: 40px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin: 0 8px;
+    padding: 4px;
+  }
+  
+  .pagination span {
+    font-size: 16px;
+  }
+  
+  /* Styling for the items dropdown */
+  .itemsDropdown {
+    margin-left: auto;
+  }
+  
+  /* Styling for the sorting dropdown */
+  .sorting-dropdown {
+    margin-right: 16px;
+  }
+  
+  /* Styling for the filter panel */
+  .filter-panel {
+    background-color: #fff;
+    border: 1px solid #eaeaea;
+    border-radius: 4px;
+    padding: 16px;
+    margin: 16px 0;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  }
+  
+  .filter-panel h3 {
+    font-size: 16px;
+    font-weight: bold;
+    margin-top: 0;
+  }
+  
+  .filter-panel label {
+    display: block;
+    margin-bottom: 8px;
+  }
+  
+  .filter-panel input[type="checkbox"] {
+    margin-right: 8px;
+  }
+  
+  /* Styling for applied facets */
+  .applied-facets {
+    margin-bottom: 16px;
+  }
+  
+  .applied-facets .facets-panel-item {
+    display: inline-block;
+    margin-right: 8px;
+    background-color: #f5f5f5;
+    border: 1px solid #e0e0e0;
+    border-radius: 4px;
+    padding: 4px 8px;
+  }
+  
+  /* Styling for the facets panel list */
+  .facets-panel-list {
+    max-height: 100px; /* Set a maximum height for the facet list */
+    overflow-y: auto;
+  }
+  
+  /* Styling for the facet labels */
+  .facet-label {
+    font-size: 14px;
+    font-weight: bold;
+  }
+  
+  /* Styling for the facet counts */
+  .facet-count {
+    font-size: 14px;
+    color: #777;
+  }
+  
+  /* Styling for the clear facets button */
+  .clear-facets-button {
+    font-size: 14px;
+    color: #e53935; /* Red color for the button */
+    cursor: pointer;
+  }
+  
+  /* Styling for the facet expand/collapse button */
+  .expand-facets-button {
+    font-size: 18px;
+    cursor: pointer;
+  }
+  
+  /* Styling for the expanded facets */
+
+  /* Container to hold both the author filter and product cards */
+.container {
+  display: flex; /* Use flexbox to create the desired layout */
+  align-items: flex-start; /* Align items to the top */
+  justify-content: space-between; /* Create space between the author filter and product cards */
 }
 
-.right-panel{
-    width: 70%;
-    float: right;
+/* Author filter styles */
+.author-filter {
+  /* Add your styles for the author filter panel */
+  width: 25%; /* Adjust the width as needed */
+  padding: 20px; /* Add padding for spacing */
+}
+
+/* Product cards styles */
+.product-cards {
+  /* Add your styles for the search product cards */
+  width: 70%; /* Adjust the width as needed */
+  float: right; /* Float the product cards to the right */
+  /* You may need to adjust margins or paddings for spacing */
+}
+
+/* Media query to handle responsiveness if needed */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column; /* Stack elements vertically on small screens */
+  }
+  .author-filter, .product-cards {
+    width: 100%; /* Full width for both elements on small screens */
+    float: none; /* Remove float on small screens */
+  }
+}
+
+.body-content{
+  padding-top: 180px;
+  position: relative;
+  z-index: 1; /* Ensure it's behind the header */
 }

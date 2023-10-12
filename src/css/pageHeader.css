@@ -1,19 +1,32 @@
-.search-header{
-    background-color: #777c81c2;
-    padding: 10px;
+
+
+.upperRowInHeader{
+  background-color: rgb(237, 237, 237);
+  padding: 20px;
+  border-top: 1px solid rgb(198, 199, 199);
+  border-bottom: 1px solid rgb(198, 199, 199);
+}
+
+.lowerRowInHeader{
+  background-color: rgb(244, 244, 244);
+  border: 1px solid rgb(217, 217, 217);
+  border-right: none;
+  box-shadow: rgb(217, 217, 217) 0px 8px 6px -2px;
+  color: rgb(33, 37, 41);
+  font-family: "Segoe UI", "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif;
+  padding: 16px;
+  height: 74px;
 }
 
 .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    max-width: 1200px;
     margin: 0 auto;
-    padding: 0 20px;
+    padding: 0 50px;
   }
 
 .search-header input{
-    height: 15px;
     padding: 10px;
     font-size: 16px; 
     border: 1px solid #ccc;
@@ -42,16 +55,32 @@
     gap: 20px;
   }
   
-  .nav-menu li a {
-    text-decoration: none;
-    color: #fff;
-    font-weight: bold;
+  .nav-menu li {
+    color: #3D3D3D;
     transition: color 0.3s;
+    cursor: pointer;
+  }
+
+  .nav-menu span{
+    margin-top: 10px;
+    padding: 8px;
   }
   
-  .nav-menu li a:hover {
-    color: #394453;
+  .nav-menu span:hover {
+    background-color: #394453;
+    color: #fff;
   }
+
+  .nav-menu span:hover img{
+    filter: invert(100%) sepia(4%) saturate(7462%) hue-rotate(52deg) brightness(113%) contrast(109%);
+  }
+
+  .nav-menu li a{
+    text-decoration: none;
+    color: #3D3D3D;
+  }
+
+  
 
   /* Responsive Styles (you can add media queries as needed) */
 @media (max-width: 768px) {
@@ -63,4 +92,65 @@
     .nav-menu {
       margin-top: 20px;
     }
+}
+
+.institutionButtonHeader{
+  border: 1px solid rgb(173, 181, 189);
+  padding-right: 15px;
+  padding-top: 2px;
+  padding-bottom: 2px;
+  padding-left: 15px;
+}
+
+.search-header{
+  position:fixed; 
+  top:0; 
+  left:0; 
+  z-index:2000; 
+  width:100%;
+}
+
+.institutionButtonHeader:hover{
+  background-color: #838383;
+  cursor: pointer;
+}
+
+.institutionButtonHeader:hover a{
+  color: #fff;
+}
+.institutionButtonHeader{
+  width: 250px !important;
+  float: right;
+  margin-left: auto;
+  border: 1px solid #d9d9d9;
+  height: 35px;
+  padding-top: 3px;
+  text-align: center;
+  margin-top: 3px;
+  margin-right: 10px;
+}
+
+.search-header input{
+  background: white url(https://www.wiley.com/2022-assets/images/icons/search.svg) left no-repeat;
+  background-position: 10px;
+  padding-left: 45px
+}
+
+.upperRowInHeader{
+  padding-left: 50px;
+  padding-right: 50px;
+}
+
+.lowerRowInHeader{
+  padding-left: 90px;
+  padding-right: 90px;
+}
+
+.active{
+  background-color: #394453;
+  color: #fff;
+}
+
+ .nav-menu span.active img {
+  filter: invert(100%) sepia(4%) saturate(7462%) hue-rotate(52deg) brightness(113%) contrast(109%);
 }
