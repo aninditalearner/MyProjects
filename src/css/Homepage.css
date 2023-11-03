@@ -79,3 +79,8 @@ body {
   .body-content{
     padding-top: 180px;
   }
+
+  .homepage-container .body-content{
+    padding-left: 0px;
+    padding-right: 0px;
+  }

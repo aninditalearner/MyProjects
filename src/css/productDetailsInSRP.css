@@ -4,7 +4,11 @@
     padding: 10px;
     margin: 10px;
     background-color: #f9f9f9;
+    height: 208px;
+  }
 
+  .product-item div{
+    height: 100%;
   }
   
   .product-item h3 {
@@ -25,10 +29,87 @@
   align-items: flex-start;
 }
   .image{
-    width: 10%;
-    padding-top: 3%;
-  }
+    align-items: center;
+    border-radius: 3px;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    width: 140px;
+}
+  
   .image img{
     width: 90%;
   }
+
+  /* Styling for the product details card */
+.product-item {
+  border: 1px solid #eaeaea;
+  padding: 16px;
+  margin: 16px 0;
+  background-color: #fff;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+}
+
+.product-item a {
+  text-decoration: none;
+  color: #333;
+}
+
+.product-item:hover {
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+}
+
+/* Styling for the product image */
+.product-item .image img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Styling for product details */
+.product-item .product-details {
+  padding-top: 10px;
+  margin-left: 16px;
+}
+
+.product-item h2 {
+  font-size: 18px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.product-item p {
+  margin: 8px 0;
+  font-size: 14px;
+}
+
+.product-item .author-label {
+  font-weight: bold;
+}
+
+.product-item .price-label {
+  font-weight: bold;
+  color: #e53935; /* Red color for price */
+}
+
+/* Styling for the publication date */
+.product-item .publication-date-label {
+  font-style: italic;
+}
+
+.data-product-item{
+  padding-top: 10px;
+  color: hsla(0,0%,7%,.8);
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: .0025em;
+    line-height: 20px;
+}
+
+.product-card{
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+}
+
+
 

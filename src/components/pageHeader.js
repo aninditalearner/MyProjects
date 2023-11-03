@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import "../css/pageHeader.css";
 import logo from "../images/logo.svg";
 import account from "../images/account.png";
@@ -14,7 +15,13 @@ import ProfessionalDevelopmentDropdown from "./HeaderElements/ProfessionalDevelo
 
 function PageHeader() {
   const navigate = useNavigate();
+  const location = useLocation();
   const [searchTerm, setSearchTerm] = useState("");
+  const query = new URLSearchParams(location.search).get("query");
+  let placeholder = "Search Wiley for what you're looking for";
+  if (query) {
+    placeholder = query;
+  }
   const [shopDropDown, setShopDropDown] = useState(false);
   const [reasearchLibraryDropDown, setreasearchLibraryDropDown] =
     useState(false);
@@ -85,7 +92,7 @@ function PageHeader() {
             </Link>
             <input
               type="text"
-              placeholder="Search Wiley for what you're looking for"
+              placeholder={placeholder}
               value={searchTerm}
               onChange={handleInputBoxValue}
               onKeyDown={handleSearch}

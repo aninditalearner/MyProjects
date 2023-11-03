@@ -1,11 +1,7 @@
 /* Styling for the filter panel container */
 .filter-panel {
-  background-color: #fff;
-  border: 1px solid #eaeaea;
-  border-radius: 4px;
-  padding: 16px;
+  background-color: #f5f5f5;
   margin: 16px 0;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
   max-height: 100px; /* Adjust the max height as needed */
   overflow: hidden;
   transition: max-height 0.3s ease-in-out;
@@ -52,16 +48,38 @@
 
 /* Styling for the filter section title */
 .filter-section-title {
-  font-weight: bold;
-  margin-bottom: 8px;
-  color: #333;
+  background-color: #f5f5f5;
+  color: #131313;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: .0025em;
+  line-height: 20px;
+  padding: 1rem 0;
+  text-transform: capitalize;
+}
+
+.filter-section-title span{
+  margin-right: 150px;
+}
+
+.filter-section-title:after {
+  display: inline-block;
+  background-image: 	url("../images/accordion.svg");
+  background-repeat: no-repeat;
+  background-size: 1rem;
+  content: "";
+  flex-shrink: 0;
+  height: 1rem;
+  margin-left: auto;
+  transition: transform 0.2s ease-in-out;
+  width: 1.25rem;
 }
 
 /* Styling for the facets panel list */
 .facets-panel-list {
   list-style: none;
   padding: 0;
-  max-height: 100px; /* Adjust the max height as needed */
+  max-height: 200px; /* Adjust the max height as needed */
   overflow: hidden;
   transition: max-height 0.3s ease-in-out;
 }
@@ -103,4 +121,14 @@ input[type="checkbox"] {
 /* Add styles for the expanded state of the author list */
 .facets-panel-list.expanded {
   max-height: none;
+}
+
+.accordion{
+  background: none;
+	color: inherit;
+	border: none;
+	padding: 0;
+	font: inherit;
+	cursor: pointer;
+	outline: inherit;
 }
